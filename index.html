@@ -981,7 +981,7 @@
           <div class="result-value" id="calcResultValue">₱0</div>
           <div style="color: var(--muted); margin-top: 1rem; font-size: 0.9rem;">
             <div>Subtotal: <strong id="calcSubtotal">₱0</strong></div>
-            <div>Discount: <strong id="calcDiscount" style="color: var(--primary);">-₱0</strong></div>
+            <div>Discount: <strong id="calcDiscountTotal" style="color: var(--primary);">-₱0</strong></div>
             <div>Services: <strong id="calcServicesTotal">+₱0</strong></div>
           </div>
         </div>
@@ -1208,7 +1208,6 @@
      * @returns {void}
      */
     function updateUIAfterLogin() {
-      document.getElementById('loginPage').style.display = 'none';
       document.getElementById('logoutBtn').style.display = 'inline-block';
       document.getElementById('dashboardLink').style.display = 'inline-block';
       updateNavigationState();
@@ -1226,7 +1225,6 @@
      * @returns {void}
      */
     function updateUIAfterLogout() {
-      document.getElementById('loginPage').style.display = 'block';
       document.getElementById('logoutBtn').style.display = 'none';
       document.getElementById('dashboardLink').style.display = 'none';
       updateNavigationState();
@@ -1260,7 +1258,10 @@
       }
 
       const pages = document.querySelectorAll('.page-section');
-      pages.forEach(page => page.classList.remove('active'));
+      pages.forEach(page => {
+        page.classList.remove('active');
+        page.style.removeProperty('display');
+      });
 
       const selectedPage = document.getElementById(pageId + 'Page');
       if (selectedPage) {
@@ -1398,7 +1399,7 @@
       const total = subtotal - discount + services;
 
       document.getElementById('calcSubtotal').textContent = `₱${subtotal}`;
-      document.getElementById('calcDiscount').textContent = `-₱${discount}`;
+      document.getElementById('calcDiscountTotal').textContent = `-₱${discount}`;
       document.getElementById('calcServicesTotal').textContent = `+₱${services}`;
       document.getElementById('calcResultValue').textContent = `₱${total}`;
       document.getElementById('calcResult').style.display = 'block';
