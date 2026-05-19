@@ -31,6 +31,19 @@
       --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Inter', Helvetica, Arial, sans-serif;
     }
 
+    body.dark-mode {
+      --bg: #070B16;
+      --surface: #111827;
+      --surface-soft: #1B2435;
+      --surface-muted: #172135;
+      --text: #F5F7FA;
+      --muted: #9CA3AF;
+      --accent: #5B7CFF;
+      --primary: #FF7E6D;
+      --border: #1F2937;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+    }
+
     /* =====================================================
        LIGHT MODE THEME OVERRIDE
        Applied when .light-mode class is on body
@@ -449,7 +462,7 @@
 
     .table th,
     .table td {
-      color: var(--text);
+      color: var(--text) !important;
     }
 
     .hero-card,
