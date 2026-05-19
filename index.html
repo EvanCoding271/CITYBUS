@@ -28,7 +28,7 @@
       --shadow: 0 40px 80px rgba(0, 0, 0, 0.24);
       --radius: 24px;
       --radius-sm: 16px;
-      --font-sans: 'Inter', Helvetica, Arial, sans-serif;
+      --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Inter', Helvetica, Arial, sans-serif;
     }
 
     /* =====================================================
@@ -36,14 +36,14 @@
        Applied when .light-mode class is on body
     ===================================================== */
     body.light-mode {
-      --bg: #F5F7FA;
+      --bg: #E7EEF7;
       --surface: #FFFFFF;
-      --surface-soft: #F0F2F5;
-      --surface-muted: #E8EAF0;
-      --text: #1A1D24;
-      --muted: #6B7280;
-      --border: #D4DAE6;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --surface-soft: #F8FAFC;
+      --surface-muted: #EFF4FB;
+      --text: #111827;
+      --muted: #475569;
+      --border: #CBD5E1;
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
     }
 
     /* =====================================================
@@ -439,11 +439,25 @@
       border-radius: var(--radius-sm);
       padding: 2rem;
       overflow-x: auto;
+      color: var(--text);
     }
 
     .table {
       color: var(--text);
       margin-bottom: 0;
+    }
+
+    .table th,
+    .table td {
+      color: var(--text);
+    }
+
+    .hero-card,
+    .service-card,
+    .calculator-card,
+    .dashboard-card,
+    .login-card {
+      color: var(--text);
     }
 
     .table thead {
